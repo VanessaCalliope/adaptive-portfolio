@@ -21,10 +21,3 @@
 2. **V. Access Card**: интерактивная карточка, которая наклоняется за курсором. [Открыть](https://vanessacalliope.github.io/My-portfolio/holo-id-card.html)
 3. **Мой Блог**: блог с добавлением записей, темой и языками. [Открыть](https://vanessacalliope.github.io/My-portfolio/blog.html)
 
-## Стек
-
-HTML · CSS · JavaScript · Git
-
-## Статус
-
-Этап 1: подготовка. Структура и материалы готовы, вёрстка впереди.
