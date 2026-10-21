@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мои работы — Vanessa · Frontend</title>
+  <style>
+    :root {
+      --bg: #0f1624;
+      --card: #182238;
+      --border: #2a3857;
+      --text: #e8edf7;
+      --muted: #9fb0cf;
+      --accent: #5b9dff;
+      --gap: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1rem;        
+      line-height: 1.6;        
+      overflow-wrap: break-word;
+    }
+
+    h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 12px; }
+    h2 { font-size: 1.25rem; line-height: 1.3; margin: 0 0 8px; }
+    p  { margin: 0 0 12px; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;       
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+ 
+    .intro {
+      max-width: 60ch;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: 1fr;   
+      gap: var(--gap);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .work {
+      min-width: 0;               
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform .2s, border-color .2s;
+    }
+    .work:hover { transform: translateY(-3px); border-color: var(--accent); }
+
+    .work p { color: var(--muted); max-width: 60ch; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      font-size: .8rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: #22304f;
+      color: var(--accent);
+    }
+
+    @media (min-width: 600px) {    
+      .works { grid-template-columns: repeat(2, 1fr); }
+      h1 { font-size: 2.25rem; }
+    }
+
+    @media (min-width: 960px) {     
+      .works { grid-template-columns: repeat(3, 1fr); }
+      h1 { font-size: 2.75rem; }
+      .container { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Мои работы 🌷</h1>
+    <p class="intro">
+      Небольшая коллекция проектов, которые я собрала во время учёбы на фронтенд-разработчика:
+      от первых вёрсток до интерактивных страниц на JavaScript.
+    </p>
+
+    <ul class="works">
+      <li class="work">
+        <h2>V. Access Card</h2>
+        <p>Интерактивная карточка-визитка с наклоном при движении курсора. Опубликована на GitHub Pages.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+      </li>
+      <li class="work">
+        <h2>Cafélune</h2>
+        <p>Лендинг кафе с меню, формой заказа и переключением языков: русский, английский, турецкий.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+      </li>
+      <li class="work">
+        <h2>Мой Блог</h2>
+        <p>Блог в одном файле: посты сохраняются в браузере, есть смена темы и три языка.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Темы</span></div>
+      </li>
+      <li class="work">
+        <h2>Фильтр задач</h2>
+        <p>Список задач с кнопками-фильтрами, счётчиком и состоянием «ничего не найдено».</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">DOM</span></div>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
