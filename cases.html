@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои учебные проекты — Кейсы</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; background-color: #fafafa; }
+        h1 { border-bottom: 3px solid #0066cc; padding-bottom: 10px; color: #222; text-align: center; }
+        h2 { color: #0066cc; margin-top: 30px; border-left: 5px solid #0066cc; padding-left: 10px; }
+        h3 { color: #444; margin-bottom: 5px; margin-top: 20px; }
+        p { margin-top: 5px; color: #555; }
+        .links { margin: 15px 0; background: #eef5fc; padding: 12px; border-radius: 6px; }
+        .links a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 5px; }
+        .links a:hover { color: #004499; text-decoration: underline; }
+        .case-section { background: #ffffff; padding: 25px; border-radius: 8px; margin-bottom: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #eee; }
+
+        figure { margin: 20px 0; padding: 0; text-align: center; }
+        .screenshot {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+        }
+        figcaption { font-style: italic; margin-top: 10px; color: #666; font-size: 0.9em; line-height: 1.4; }
+
+        .screenshot.portrait {
+            max-width: 320px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Портфолио: Описание выполненных кейсов</h1>
+
+    
+    <div class="case-section">
+        <h2>Кейс 1: Лендинг кафе «Cafélune»</h2>
+
+        <div class="links">
+            <a href="https://vanessacalliope.github.io/My-portfolio/cafelune/" target="_blank">🚀 Живой проект</a>
+            <a href="https://github.com/VanessaCalliope/My-portfolio/blob/main/cafelune/index.html" target="_blank">💻 Код на GitHub</a>
+        </div>
+
+        <h3>1. Задача</h3>
+        <p>Сделать одностраничный сайт для вымышленного кафе «Cafélune»: показать меню, дать возможность выбрать позиции и оформить быстрый заказ. Сайт должен читаться на трёх языках — русском, английском и турецком.</p>
+
+        <h3>2. Моя роль</h3>
+        <p>Я полностью разработала проект самостоятельно: придумала концепцию, написала всю HTML-разметку (карточки меню, шапку с логотипом), оформила страницу в CSS с адаптацией под мобильные телефоны. Также я написала скрипт на JavaScript для переключения языков и кнопок «Выбрать» на карточках.</p>
+
+        <h3>3. Мои решения</h3>
+        <p>Для быстрой смены языка я использовала JavaScript и структуру данных с переводами, чтобы не перезагружать страницу. Для меню я сделала карточки с эмодзи и четкими кнопками выбора, чтобы интерфейс был понятен пользователю с телефона.</p>
+
+        <figure>
+            <img class="screenshot" src="1792577183506.jpg" alt="Главный экран сайта Cafélune">
+            <figcaption>Главный экран кафе: логотип, слоган и кнопка «Take a peek inside». В шапке — переключатель языков и темы.</figcaption>
+        </figure>
+
+        <figure>
+            <img class="screenshot" src="1792577214544.jpg" alt="Меню кафе Cafélune">
+            <figcaption>Меню кафе: карточки с эмодзи, описанием, ценой и кнопкой «Choose».</figcaption>
+        </figure>
+
+        <h3>4. Результат</h3>
+        <p>Получился рабочий мультиязычный лендинг с меню из семи позиций и быстрым выбором блюд. Проект размещён на GitHub Pages и доступен по ссылке.</p>
+    </div>
+
+   
+    <div class="case-section">
+        <h2>Кейс 2: «Мой Блог» — блог с записями</h2>
+
+        <div class="links">
+            <a href="https://vanessacalliope.github.io/My-portfolio/blog.html" target="_blank">🚀 Живой проект</a>
+            <a href="https://github.com/VanessaCalliope/My-portfolio/blob/main/blog.html" target="_blank">💻 Код на GitHub</a>
+        </div>
+
+        <h3>1. Задача</h3>
+        <p>Создать страницу личного блога, где можно в любой момент добавить новую запись (заголовок + текст) и увидеть её в общем списке. Дополнительно: реализовать переключение тёмной/светлой темы и трёх языков интерфейса.</p>
+
+        <h3>2. Моя роль</h3>
+        <p>Я сделала вёрстку формы для ввода новой записи и списка существующих постов на HTML. Оформила дизайн в CSS (стиль «гортензия»), создала кнопку смены темы и языковую панель. На JavaScript я написала логику добавления поста на страницу и валидацию (проверку, что поля не пустые).</p>
+
+        <h3>3. Мои решения</h3>
+        <p>Чтобы интерфейс выглядел живым, я добавила плавные переходы цветов в CSS при смене темы. Для валидации формы использовала простые условия в JavaScript, которые не дают опубликовать пустую запись. Языки переключаются с помощью замены текста в DOM-элементах.</p>
+
+        <figure>
+            <img class="screenshot" src="1792577236200.jpg" alt="Скриншот блога">
+            <figcaption>Форма «Добавить новую запись» и список опубликованных постов. Сверху — переключатель языков и кнопка смены темы 🌙.</figcaption>
+        </figure>
+
+        <h3>4. Результат</h3>
+        <p>Интерфейс подстраивается под выбранную тему и язык, а форма корректно добавляет новые заголовки и текст в список. Проект полностью выполнен на клиентской стороне.</p>
+    </div>
+
+    <div class="case-section">
+        <h2>Кейс 3: Интерактивная «V. Access Card»</h2>
+
+        <div class="links">
+            <a href="https://vanessacalliope.github.io/My-portfolio/holo-id-card.html" target="_blank">🚀 Живой проект</a>
+            <a href="https://github.com/VanessaCalliope/My-portfolio/blob/main/holo-id-card.html" target="_blank">💻 Код на GitHub</a>
+        </div>
+
+        <h3>1. Задача</h3>
+        <p>Сделать визитку-портфолио в виде голографической ID-карты разработчика, которая «оживает» при движении мыши или пальца. Задача — создать запоминающийся дизайн, демонстрирующий мои навыки в вёрстке и анимациях.</p>
+
+        <h3>2. Моя роль</h3>
+        <p>Я разработала дизайн карты в стиле «доступ подтверждён» (Developer Access, уровень: Rising). Написала HTML-структуру для всех элементов карты и настроила CSS-эффекты для голографического блеска. На JavaScript реализовала логику наклона карты вслед за курсором мыши или пальцем на телефоне.</p>
+
+        <h3>3. Мои решения</h3>
+        <p>Для 3D-эффекта я использовала CSS-свойство <code>transform</code> и <code>perspective</code>. В JavaScript я отслеживаю координаты курсора (или касания), вычисляю угол наклона и применяю его к карте, чтобы создать ощущение объёма.</p>
+
+        <figure>
+            <img class="screenshot portrait" src="1792577200559.jpg" alt="Скриншот голографической ID-карты">
+            <figcaption>Карта «V. ACCESS CARD» с надписью HTML · CSS · JS и голографическим блеском. Наклоняется следом за мышью или пальцем.</figcaption>
+        </figure>
+
+        <h3>4. Результат</h3>
+        <p>Лёгкая интерактивная страница, которая работает и на компьютере, и на телефоне. Карта реагирует на движения без задержек. Проект размещён на GitHub Pages.</p>
+    </div>
+
+</body>
+</html>
