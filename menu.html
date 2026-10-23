@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanessa — Веб-разработчик</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f4f6f8;
+            color: #1a2430;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 1.3rem;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            scroll-margin-top: 16px;
+        }
+
+        section p {
+            margin: 0 0 12px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #0b5fa5;
+        }
+
+        .burger-btn {
+            margin-top: 16px;
+            padding: 10px 18px;
+            font-size: 16px;
+            background: #1a2430;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a2430;
+            color: white;
+            z-index: 1000;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .mobile-nav.is-open {
+            display: block;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .menu-list li {
+            margin-bottom: 20px;
+        }
+
+        .menu-list a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .close-btn {
+            padding: 10px 18px;
+            font-size: 16px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 4px solid #00bcff;
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vanessa — Веб-разработчик</h1>
+    <p>Мой GitHub: <a href="https://github.com/VanessaCalliope" target="_blank" rel="noopener noreferrer">github.com/VanessaCalliope</a></p>
+
+    <button id="menuBtn" class="burger-btn" aria-label="Открыть навигационное меню" aria-expanded="false" aria-controls="mobileMenu">
+        ☰ Меню
+    </button>
+
+    <nav id="mobileMenu" class="mobile-nav" aria-label="Навигация по сайту" aria-hidden="true">
+        <button id="closeBtn" class="close-btn" aria-label="Закрыть меню">✕ Закрыть</button>
+
+        <ul class="menu-list">
+            <li><a href="#about" class="menu-link">Обо мне</a></li>
+            <li><a href="#portfolio" class="menu-link">Портфолио</a></li>
+            <li><a href="https://github.com/VanessaCalliope" class="menu-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2>Обо мне</h2>
+        <p>Изучаю фронтенд-разработку: HTML, CSS, JavaScript и Git. Делаю адаптивные страницы и учусь писать аккуратный, доступный код.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <p>Мои работы собраны на отдельной странице: <a href="https://vanessacalliope.github.io/adaptive-portfolio/index.html" target="_blank" rel="noopener noreferrer">открыть портфолио</a>.</p>
+        <p>Исходный код проектов — на <a href="https://github.com/VanessaCalliope" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </section>
+</main>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    const menuItems = mobileMenu.querySelectorAll('button, a');
+    const firstFocusable = menuItems[0];
+    const lastFocusable = menuItems[menuItems.length - 1];
+
+    function openMenu() {
+        mobileMenu.classList.add('is-open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+    }
+
+    function closeMenu(returnFocus = true) {
+        mobileMenu.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        if (returnFocus) {
+            menuBtn.focus();
+        }
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', () => closeMenu());
+  
+    document.querySelectorAll('.menu-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+            closeMenu(false);
+        });
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (mobileMenu.classList.contains('is-open') && event.key === 'Escape') {
+            closeMenu();
+        }
+
+        if (mobileMenu.classList.contains('is-open') && event.key === 'Tab') {
+            if (event.shiftKey) {
+                if (document.activeElement === firstFocusable) {
+                    lastFocusable.focus();
+                    event.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastFocusable) {
+                    firstFocusable.focus();
+                    event.preventDefault();
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
