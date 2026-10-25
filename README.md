@@ -1,4 +1,4 @@
-# Портфолио Vanessa · Frontend
+
 
 Портфолио начинающего frontend-разработчика. Здесь мои работы на HTML, CSS и JavaScript.
 
